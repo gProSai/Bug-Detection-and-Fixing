@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/python/python.min.js"></script>
+    <title>Python Web Compiler</title>
+</head>
+<body>
+    <div id="app">
+        <div class="editor-container"></div>
+        <div class="output-container">
+            <h2>Output</h2>
+            <pre id="output"></pre>
+        </div>
+    </div>
+    <div class="controls">
+        <button id="run">Run</button>
+        <button id="clear">Clear</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
