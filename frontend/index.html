@@ -3,25 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <title>Python Web Compiler</title>
+    
+    <!-- CodeMirror Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/theme/dracula.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- CodeMirror Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/python/python.min.js"></script>
-    <title>Python Web Compiler</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
-    <div id="app">
-        <div class="editor-container"></div>
-        <div class="output-container">
-            <h2>Output</h2>
-            <pre id="output"></pre>
+    <div class="container">
+        <h1>Python Web Compiler</h1>
+        
+        <div class="main-content">
+            <!-- Left Side: Code Editor -->
+            <div class="editor-wrapper">
+                <div class="editor-container"></div>
+            </div>
+
+            <!-- Right Side: Output & Suggestions -->
+            <div class="right-panel">
+                <div class="tabs">
+                    <button class="tab-button active" data-tab="output">Output</button>
+                    <button class="tab-button" data-tab="suggestions">Suggestions</button>
+                </div>
+                <div class="tab-content">
+                    <div id="output" class="tab-panel active">
+                        <h3>Output</h3>
+                        <pre id="output-content">No Code</pre>
+                    </div>
+                    <div id="suggestions" class="tab-panel">
+                        <h3>Suggestions</h3>
+                        <div id="suggestions-content" class="scrollable"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="run">▶ Run Code</button>
+            <button id="clear">🗑 Clear</button>
         </div>
     </div>
-    <div class="controls">
-        <button id="run">Run</button>
-        <button id="clear">Clear</button>
-    </div>
 
+    <!-- Custom JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
