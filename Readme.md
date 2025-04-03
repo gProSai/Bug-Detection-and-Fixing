@@ -69,7 +69,7 @@ If the `.env` file is missing, manually create a new one inside `backend/main/` 
 GEMINI_API_KEY=your_api_key_here
 ```
 
-> **Note:** The API key provided in the `.env` file is temporary and will be deleted or become non-functional after a certain period. If the API key expires, please contact the project maintainer for an updated key.
+> **Note:** The API key provided in the `.env` file is temporary and will be deleted or become non-functional after a certain period.
 
 ### 3. Installing Required Packages
 
