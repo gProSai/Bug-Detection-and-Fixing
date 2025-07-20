@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Web Compiler</title>
+    <title>Python Web Compiler with Auto-Correction</title>
     
     <!-- CodeMirror Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
@@ -19,28 +19,35 @@
 </head>
 <body>
     <div class="container">
-        <h1>Python Web Compiler</h1>
+        <h1>🐍 Python Web Compiler <span class="version">v2.0</span></h1>
         
         <div class="main-content">
             <!-- Left Side: Code Editor -->
             <div class="editor-wrapper">
+                <div class="editor-header">
+                    <span>📝 Code Editor</span>
+                    <div class="editor-actions">
+                        <button class="small-btn" id="save-code" title="Save to localStorage">💾</button>
+                        <button class="small-btn" id="load-code" title="Load from localStorage">📂</button>
+                    </div>
+                </div>
                 <div class="editor-container"></div>
             </div>
 
             <!-- Right Side: Output & Suggestions -->
             <div class="right-panel">
                 <div class="tabs">
-                    <button class="tab-button active" data-tab="output">Output</button>
-                    <button class="tab-button" data-tab="suggestions">Suggestions</button>
+                    <button class="tab-button active" data-tab="output">📊 Output</button>
+                    <button class="tab-button" data-tab="suggestions">💡 Suggestions</button>
                 </div>
                 <div class="tab-content">
                     <div id="output" class="tab-panel active">
                         <h3>Output</h3>
-                        <pre id="output-content">No Code</pre>
+                        <pre id="output-content">Ready to execute your Python code...</pre>
                     </div>
                     <div id="suggestions" class="tab-panel">
-                        <h3>Suggestions</h3>
-                        <div id="suggestions-content" class="scrollable"></div>
+                        <h3>AI Suggestions</h3>
+                        <div id="suggestions-content" class="scrollable">Write and run some code to get AI-powered suggestions!</div>
                     </div>
                 </div>
             </div>
@@ -48,7 +55,14 @@
 
         <div class="controls">
             <button id="run">▶ Run Code</button>
+            <button id="auto-correct" disabled>🔧 Auto-Correct</button>
             <button id="clear">🗑 Clear</button>
+        </div>
+
+        <!-- Status bar -->
+        <div class="status-bar">
+            <span id="status">Ready</span>
+            <span id="shortcuts">Shortcuts: Ctrl+Enter (Run) | Ctrl+Shift+F (Auto-correct)</span>
         </div>
     </div>
 
