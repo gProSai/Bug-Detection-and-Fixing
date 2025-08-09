@@ -13,9 +13,8 @@ from fastapi.middleware.cors import CORSMiddleware
 
 load_dotenv()
 
-
 app = FastAPI()
-
+ 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"], 
